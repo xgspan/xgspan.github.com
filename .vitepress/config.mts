@@ -13,7 +13,7 @@ export default defineConfig({
       {text: 'Home', link: '/'},
       {text: 'Examples', link: '/markdown-examples'}
     ],
-s
+
     sidebar: [
       {
         text: 'Examples',
