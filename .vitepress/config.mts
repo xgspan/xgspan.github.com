@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "小怪兽",
-  description: "资源分享",
+  description: "资源分享 test",
   themeConfig: {
     logo: '/static/image/logo.svg',
 
