@@ -21,11 +21,11 @@ hero:
       link: mailto:vpncharmingsong@proton.me
 
 features:
-#  - icon:
-#      src: /image/game.svg
-#    title: 游戏资源
-#    link: /game
-#    details: pc游戏、steam游戏、联机游戏、switch游戏
+  - icon:
+      src: /image/tools.svg
+    title: 软件资源
+    link: /tools
+    details: 破解软件、安卓、苹果、免会员
   - icon:
       src: /image/videos.svg
     title: 影视资源
