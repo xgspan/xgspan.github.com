@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "vite-plugin-vitepress-auto-sidebar": "^1.7.0",
     "vitepress": "^1.4.1"
   },
   "scripts": {
