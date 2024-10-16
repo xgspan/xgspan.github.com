@@ -10,12 +10,14 @@ hero:
     src: /logo/logo.jpg
     alt: VitePress
   actions:
+
     - theme: brand
-      text: 如果有需要的资源，在dy最近的作品评论(速度快）
-      link: https://v.douyin.com/iBKqGjay/
+      text: 加入我们
+      link: /qqcode.jpg
+      target: _blank
       
     - theme: alt
-      text: send mail （慢）
+      text: 发送邮件
       link: mailto:vpncharmingsong@proton.me
 
 features:
