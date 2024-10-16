@@ -30,7 +30,7 @@ features:
       src: /image/videos.svg
     title: 影视资源
     link: /videos
-    details: 韩剧、网剧、电影、美剧、广播剧
+    details: 动漫、网剧、电影、广播剧
 
 ---
 
