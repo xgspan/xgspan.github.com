@@ -17,20 +17,20 @@ export default defineConfig({
             // add plugin
             AutoSidebar({
                 ignoreList: ["common"], // 忽略文件夹
-                // ignoreIndexItem: true, // 忽略首页
+                ignoreIndexItem: true, // 忽略首页
                 // deletePrefix: "notes", // 删除路径前缀
-                sideBarResolved(data) {
-                    // 接收完整的侧边栏对象以进行自定义修改
-                    return data;
-                },
-                sideBarItemsResolved(data) {
-                    // 接收完整的侧边栏 subItem 对象以进行自定义修改
-                    return data;
-                },
-                beforeCreateSideBarItems(data) {
-                    // 获取生成侧边栏子项之前扫描的文件名列表。如果要对侧边栏数据进行排序，建议使用
-                    return data;
-                },
+                // sideBarResolved(data) {
+                //     // 接收完整的侧边栏对象以进行自定义修改
+                //     return data;
+                // },
+                // sideBarItemsResolved(data) {
+                //     // 接收完整的侧边栏 subItem 对象以进行自定义修改
+                //     return data;
+                // },
+                // beforeCreateSideBarItems(data) {
+                //     // 获取生成侧边栏子项之前扫描的文件名列表。如果要对侧边栏数据进行排序，建议使用
+                //     return data;
+                // },
                 titleFromFile: true, // 从文件中提取标题
                 // You can also set options to adjust sidebar data
                 // see option document below
