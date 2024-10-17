@@ -40,7 +40,19 @@ export default defineConfig({
     themeConfig: {
         // 本地搜索
         search: {
-            provider: 'local',
+            // provider: 'local',
+            provider: 'algolia',
+            options: {
+                appId: '63ALYN1PAM',
+                apiKey: '5e500c4b895b1404d0b241239a5300db',
+                indexName: 'xgs',
+                placeholder: "请输入关键词",
+                translations: {
+                    button: {
+                        buttonText: "请输入关键词",
+                    },
+                },
+            }
         },
         // 文章翻页
         docFooter: {
