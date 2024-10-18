@@ -1,4 +1,4 @@
-# PC 游戏
+# 热门游戏
 
 ::: tip 提示
 游戏比较多，部分游戏放在合集里了。建议用手机转存，搜索需要的游戏。用手机可获得高速通道。
@@ -7,6 +7,7 @@
 ## 主播热门游戏
 
 - [骗子酒吧 联机版](https://pan.quark.cn/s/86ff65968839)
+- [沙威玛传奇🔥](https://pan.quark.cn/s/efd6ddbfd072)
 
 ## 热门游戏
 - [《侠盗猎车手：罪恶都市重制版》免安装绿色中文版](https://pan.quark.cn/s/02a83dbb08e2)
@@ -40,7 +41,3 @@
 - [🎮游戏合集PC端](https://pan.quark.cn/s/c6c7496d096d)
 - [🎮60款PC端游戏【782GB】](https://pan.quark.cn/s/6597e5e0d309)
 - [🔥2000款+热门单机游戏合集（持续更新中）](https://pan.quark.cn/s/a1414fab77e0)
-
-## 恋爱游戏
-
-- [失业❤️大富翁](https://pan.quark.cn/s/32d14865c45b)
