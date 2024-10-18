@@ -2,7 +2,7 @@
 
 ## Adobe
 
-- [Adobe Photoshop2024免激活](https://pan.quark.cn/s/aa46c23e4ef1)
+- [Adobe Photoshop 【ps】 激活全部功能](https://pan.quark.cn/s/aa46c23e4ef1)
 
 ## 剪映
 
@@ -10,4 +10,4 @@
 
 ## 配音
 
-- [一点红~配音](https://pan.quark.cn/s/3285e1790b16)
+- [一点红~免费配音](https://pan.quark.cn/s/3285e1790b16)

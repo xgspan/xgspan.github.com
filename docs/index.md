@@ -25,12 +25,16 @@ features:
       src: /image/tools.svg
     title: 软件资源
     link: /tools
-    details: 破解软件、安卓、苹果、免会员
+    details: 破解软件、安卓、苹果、免会员...
   - icon:
       src: /image/videos.svg
     title: 影视资源
     link: /videos
-    details: 动漫、网剧、电影、广播剧
-
+    details: 动漫、网剧、电影、广播剧...
+  - icon:
+      src: /image/game.svg
+    title: 游戏资源
+    link: /game
+    details: steam游戏、游戏合集、恋爱游戏...
 ---
 
