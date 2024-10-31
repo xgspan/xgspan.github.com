@@ -5,7 +5,7 @@ layout: home
 hero:
   name: 小怪兽
   text: 资源分享
-  tagline: 努力做些贡献，整理好用的资源，免费分享
+  tagline: 无任何广告，资源免费分享学习平台
   image:
     src: /logo/logo.jpg
     alt: VitePress
