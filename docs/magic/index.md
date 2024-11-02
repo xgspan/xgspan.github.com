@@ -10,7 +10,7 @@
 
 ## 教程
 
-[教程地址](https://pan.quark.cn/s/a03f94489c3a)
+不会的可以看这里 ➡️ [视频教程地址](https://pan.quark.cn/s/a03f94489c3a)
 
 ## 安卓
 
@@ -22,7 +22,7 @@
 
 1. 安装shadowrocket 需要美区appleID
 
-   ::: danger 千万注意
+   ::: danger
 
    免费共享苹果账号必须从App Store 登录
 
@@ -40,7 +40,7 @@
 
    在这个网址获取，点击这里 ➡️ [共享ID](https://idshare001.me/goso.html)
 
-   ![login-app-id](public/assets/index/login-app-id.jpg)
+   ![login-app-id](.public/assets/index/login-app-id.jpg)
 
 2. 将ID登录到 appstore 后点击这里
 

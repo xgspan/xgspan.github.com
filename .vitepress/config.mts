@@ -17,7 +17,7 @@ export default defineConfig({
             // add plugin
             AutoSidebar({
                 ignoreList: ["common"], // 忽略文件夹
-                ignoreIndexItem: true, // 忽略首页
+                ignoreIndexItem: false, // 忽略首页
                 // deletePrefix: "notes", // 删除路径前缀
                 // sideBarResolved(data) {
                 //     // 接收完整的侧边栏对象以进行自定义修改
@@ -27,15 +27,36 @@ export default defineConfig({
                 //     // 接收完整的侧边栏 subItem 对象以进行自定义修改
                 //     return data;
                 // },
-                // beforeCreateSideBarItems(data) {
-                //     // 获取生成侧边栏子项之前扫描的文件名列表。如果要对侧边栏数据进行排序，建议使用
-                //     return data;
-                // },
+                beforeCreateSideBarItems(data) {
+                    let list = []
+                    data.forEach(t=>{
+                        if (t == 'index.md') {
+                            list.unshift(t)
+                        }else{
+                            list.push(t)
+                        }
+                    })
+                    // 获取生成侧边栏子项之前扫描的文件名列表。如果要对侧边栏数据进行排序，建议使用
+                    return list;
+                },
                 titleFromFile: true, // 从文件中提取标题
                 // You can also set options to adjust sidebar data
                 // see option document below
             }),
         ],
+    },
+    markdown: {
+        container: {
+            tipLabel: '提示',
+            warningLabel: '注意',
+            dangerLabel: '特别注意',
+            infoLabel: '信息',
+            detailsLabel: '详细信息'
+        },
+        image: {
+            // 默认禁用图片懒加载
+            lazyLoading: true
+        }
     },
     themeConfig: {
         // 本地搜索
