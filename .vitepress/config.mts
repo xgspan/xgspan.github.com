@@ -1,5 +1,7 @@
 import {defineConfig} from 'vitepress'
 import AutoSidebar from "vite-plugin-vitepress-auto-sidebar";
+import Components from 'unplugin-vue-components/vite';
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -42,6 +44,13 @@ export default defineConfig({
                 titleFromFile: true, // 从文件中提取标题
                 // You can also set options to adjust sidebar data
                 // see option document below
+            }),
+            Components({
+                resolvers: [
+                    AntDesignVueResolver({
+                        importStyle: false, // css in js
+                    }),
+                ],
             }),
         ],
     },
