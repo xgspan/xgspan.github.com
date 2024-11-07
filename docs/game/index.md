@@ -2,10 +2,7 @@
 
 <!--@include: @/common/disclaimer.md-->
 
-## [热门游戏](./hot-game)
+## 页面导航
 
-> 单机游戏、热门游戏、黑悟空...
-
-## [剧情游戏](./love-game)
-
-> 男生恋爱游戏、剧情游戏...
+* [热门游戏](./hot-game)
+* [剧情游戏](./love-game)

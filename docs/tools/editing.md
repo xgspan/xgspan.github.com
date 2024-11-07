@@ -10,4 +10,4 @@
 
 ## 配音
 
-- [一点红~免费配音](https://pan.quark.cn/s/3285e1790b16)
+- [一点红~可配外语](https://pan.quark.cn/s/3285e1790b16)

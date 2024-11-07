@@ -36,6 +36,11 @@ features:
     title: 游戏资源
     link: /game
     details: steam游戏、游戏合集、恋爱游戏...
+  - icon:
+      src: /image/chigua.svg
+    title: 吃瓜
+    link: https://pan.xunlei.com/s/VOAvC89Fa6oNGcDHE8c45UMsA1?pwd=kzqe
+    details: 我们都是群众，请勿聚众吃瓜~🍉
 ---
 
 <!--@include: @/common/disclaimer.md-->

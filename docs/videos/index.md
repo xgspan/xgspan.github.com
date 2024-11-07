@@ -2,10 +2,8 @@
 
 <!--@include: @/common/disclaimer.md-->
 
-## [韩剧](./Korean-drama)
+## 页面导航
 
-> 爱情、喜剧、高评分 ...
-
-## [高分经典影视](./scriptures)
-
-> 必看经典电影、超清合集...
+* [热门网剧](./hot-net)
+* [韩剧](./Korean-drama)
+* [高分影视作品](./scriptures)
