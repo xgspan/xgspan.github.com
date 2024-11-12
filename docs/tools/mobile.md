@@ -6,3 +6,10 @@
 
 - [软件整合包](https://pan.quark.cn/s/624704ec3f40)
 - [千千工具箱](https://pan.quark.cn/s/f28ea6d0ab64)
+
+## 手机软件
+
+* [手机软件](https://pan.quark.cn/s/2716d0eb6e73)
+* [苹果合集](https://pan.quark.cn/s/d39547d5b44b)
+* [安卓、鸿蒙软件合集](https://pan.quark.cn/s/c05397d8fef4)
+* [电视，电脑合集](https://pan.quark.cn/s/fb57b322fdc7)
