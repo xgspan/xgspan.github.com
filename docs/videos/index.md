@@ -5,6 +5,8 @@
 ## 页面导航
 
 * [热门网剧](./hot-net)
+  * 快捷入口 :arrow_right: [【**小怪兽影视搜索**】](https://www.kdocs.cn/l/cns2jmfGdNOo) :arrow_left:
+
 * [韩剧](./Korean-drama)
 * [高分影视作品](./scriptures)
 
