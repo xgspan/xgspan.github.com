@@ -41,6 +41,13 @@ features:
     title: 吃瓜
     link: https://pan.xunlei.com/s/VOAvC89Fa6oNGcDHE8c45UMsA1?pwd=kzqe
     details: 我们都是群众，请勿聚众吃瓜~🍉
+  - icon:
+      src: /image/xuexi.svg
+    title: 正经学习资料
+    link: /sdudy
+    details: 小学、初中、高中、大学、考研、公务、特殊考试...
 ---
+
+
 
 <!--@include: @/common/disclaimer.md-->
