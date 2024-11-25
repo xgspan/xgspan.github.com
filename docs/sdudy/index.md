@@ -1,5 +1,7 @@
 # 正经学习资料
 
+<!--@include: @/common/disclaimer.md-->
+
 ::: details 未分类合集地址
 
  [学习资料](https://pan.quark.cn/s/cabe6289f2ce)
