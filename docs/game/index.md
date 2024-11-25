@@ -6,3 +6,5 @@
 
 * [热门游戏](./hot-game)
 * [剧情游戏](./love-game)
+* [手机游戏](./androidGame)
+
