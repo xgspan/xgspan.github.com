@@ -40,7 +40,7 @@ features:
       src: /image/jubensha.svg
     title: 剧本杀
     link: /jubensha
-    details: 热门剧本杀资料.
+    details: 热门剧本杀资料(持续更新）.
   - icon:
       src: /image/chigua.svg
     title: 吃瓜
