@@ -37,6 +37,11 @@ features:
     link: /game
     details: steam游戏、游戏合集、恋爱游戏...
   - icon:
+      src: /image/jubensha.svg
+    title: 剧本杀
+    link: /jubensha
+    details: 热门剧本杀资料.
+  - icon:
       src: /image/chigua.svg
     title: 吃瓜
     link: https://pan.xunlei.com/s/VOAvC89Fa6oNGcDHE8c45UMsA1?pwd=kzqe
