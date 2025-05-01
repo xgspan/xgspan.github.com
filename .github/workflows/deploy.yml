@@ -1,120 +1,80 @@
-name: Deploy VitePress to GitHub Pages and IIS (Password Auth)
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build with VitePress
-        run: npm run docs:build
-
-      # 上传到 GitHub Pages
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .vitepress/dist
-
-      # 准备 IIS 部署包
-      - name: Prepare IIS Artifact
+      - name: Build
         run: |
-          cd .vitepress/dist
-          tar -czf ../../dist-iis.tar.gz .
-          cd ../..
+          npm ci
+          npm run docs:build
+          
+          # 调试：显示构建结果
+          echo "Build output:"
+          ls -la .vitepress/dist
 
-      - name: Upload IIS Artifact
-        uses: actions/upload-artifact@v4
+      - name: Create IIS Package
+        run: |
+          # 确保目录存在
+          if [ ! -d ".vitepress/dist" ]; then
+            echo "❌ Error: .vitepress/dist not found!"
+            ls -la .vitepress
+            exit 1
+          fi
+          
+          # 创建压缩包
+          tar -czf dist-iis.tar.gz -C .vitepress/dist .
+          
+          # 验证
+          echo "Package contents:"
+          tar -tf dist-iis.tar.gz | wc -l
+
+      - uses: actions/upload-artifact@v4
         with:
           name: dist-iis
           path: dist-iis.tar.gz
 
-  # GitHub Pages 部署
-  deploy-to-pages:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  # Windows IIS 部署（密码认证版）
   deploy-to-iis:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: dist-iis
 
-      - name: Deploy via SCP (Password)
-        uses: appleboy/scp-action@master
+      - name: Debug Package
+        run: |
+          echo "Downloaded package:"
+          ls -la
+          echo "Package contents:"
+          tar -tf dist-iis.tar.gz | head -n 5
+
+      - uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           source: "dist-iis.tar.gz"
-          target: "C:\\web\\dist-iis.tar.gz"
-          strip_components: 1
+          target: "C:\\Temp\\"
 
-      - name: Configure IIS
-        uses: appleboy/ssh-action@master
+      - uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            # 调试：列出现有站点
-            Get-Website | Format-Table Name, PhysicalPath, State
-
-            # 创建应用池（幂等操作）
-            if (!(Test-Path "IIS:\AppPools\VitePressAppPool")) {
-              New-WebAppPool -Name "VitePressAppPool"
-              Set-ItemProperty "IIS:\AppPools\VitePressAppPool" -Name "managedRuntimeVersion" -Value ""
+            # 调试：显示服务器目录
+            echo "Server contents before:"
+            ls -la C:\web\vitepress-app || echo "Directory not exists"
+            
+            # 解压到目标目录
+            mkdir C:\web\vitepress-app -Force
+            tar -xzf C:\Temp\dist-iis.tar.gz -C C:\web\vitepress-app
+            
+            # 验证
+            echo "Server contents after:"
+            ls -la C:\web\vitepress-app
+            if (!(Test-Path C:\web\vitepress-app\index.html)) {
+              echo "❌ Error: index.html not found!"
+              exit 1
             }
-
-            # 创建/更新网站
-            if (!(Test-Path "IIS:\Sites\VitePressSite")) {
-              New-Website -Name "VitePressSite" -Port 80 -PhysicalPath "C:\web\vitepress-app" -ApplicationPool "VitePressAppPool"
-            } else {
-              Set-ItemProperty "IIS:\Sites\VitePressSite" -Name physicalPath -Value "C:\web\vitepress-app"
-            }
-
-            # 设置默认文档
-            Add-WebConfiguration -Filter "/system.webServer/defaultDocument/files" -Value @{value='index.html'} -Force
-
-            # 权限设置
-            icacls "C:\web\vitepress-app" /grant "IIS_IUSRS:(OI)(CI)R" /T
-
-            # 重启服务
-            iisreset /restart
-            Write-Output "IIS configuration completed successfully"
