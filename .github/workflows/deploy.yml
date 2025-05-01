@@ -1,49 +1,115 @@
-name: Deploy VitePress to IIS (Password Auth)
+name: Deploy VitePress to GitHub Pages and IIS
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm run docs:build
-      - uses: actions/upload-artifact@v4
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with VitePress
+        run: npm run docs:build
+
+      # 上传到 GitHub Pages
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: dist
           path: .vitepress/dist
 
-  deploy:
+      # 准备 IIS 部署包
+      - name: Prepare IIS Artifact
+        run: |
+          cd .vitepress/dist
+          tar -czf ../../dist-iis.tar.gz .
+          cd ../..
+
+      - name: Upload IIS Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-iis
+          path: dist-iis.tar.gz
+
+  # GitHub Pages 部署
+  deploy-to-pages:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # Windows IIS 部署
+  deploy-to-iis:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
         with:
-          name: dist
-      - name: Compress files
-        run: tar -czf dist.tar.gz -C dist .
-      - name: Deploy via SSH (Password)
+          name: dist-iis
+
+      - name: Deploy via SSH
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          source: "dist.tar.gz"
-          target: "C:\\web\\dist.tar.gz"
-      - name: Extract and Configure
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: "dist-iis.tar.gz"
+          target: "C:\\web\\dist-iis.tar.gz"
+
+      - name: Extract and Configure IIS
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            mkdir C:\web\vitepress -Force
-            tar -xzf C:\web\dist.tar.gz -C C:\web\vitepress
-            del C:\web\dist.tar.gz
+            # 创建目标目录
+            mkdir C:\web\vitepress-app -Force
+            
+            # 解压文件
+            tar -xzf C:\web\dist-iis.tar.gz -C C:\web\vitepress-app
+            
+            # 清理临时文件
+            del C:\web\dist-iis.tar.gz
+            
+            # 配置 IIS
+            Import-Module WebAdministration
+            if (!(Test-Path IIS:\Sites\VitePressSite)) {
+              New-WebSite -Name "VitePressSite" -Port 80 -PhysicalPath "C:\web\vitepress-app" -ApplicationPool "DefaultAppPool"
+              Add-WebConfiguration -Filter "/system.webServer/defaultDocument/files" -Value @{value='index.html'}
+            }
+            
+            # 设置权限
+            icacls "C:\web\vitepress-app" /grant "IIS_IUSRS:(OI)(CI)R"
+            
+            # 重启 IIS
             iisreset /restart
