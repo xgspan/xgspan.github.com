@@ -86,31 +86,35 @@ jobs:
           target: "C:\\web\\dist-iis.tar.gz"
           strip_components: 1
 
-      - name: Configure IIS (Password)
+      - name: Configure IIS
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            # 创建目标目录
-            mkdir C:\web\vitepress-app -Force
-            
-            # 解压文件
-            tar -xzf C:\web\dist-iis.tar.gz -C C:\web\vitepress-app
-            
-            # 清理临时文件
-            del C:\web\dist-iis.tar.gz
-            
-            # 配置 IIS
-            Import-Module WebAdministration
-            if (!(Test-Path IIS:\Sites\VitePressSite)) {
-              New-WebSite -Name "VitePressSite" -Port 80 -PhysicalPath "C:\web\vitepress-app" -ApplicationPool "DefaultAppPool"
-              Add-WebConfiguration -Filter "/system.webServer/defaultDocument/files" -Value @{value='index.html'}
+            # 调试：列出现有站点
+            Get-Website | Format-Table Name, PhysicalPath, State
+
+            # 创建应用池（幂等操作）
+            if (!(Test-Path "IIS:\AppPools\VitePressAppPool")) {
+              New-WebAppPool -Name "VitePressAppPool"
+              Set-ItemProperty "IIS:\AppPools\VitePressAppPool" -Name "managedRuntimeVersion" -Value ""
             }
-            
-            # 设置权限
-            icacls "C:\web\vitepress-app" /grant "IIS_IUSRS:(OI)(CI)R"
-            
-            # 重启 IIS
+
+            # 创建/更新网站
+            if (!(Test-Path "IIS:\Sites\VitePressSite")) {
+              New-Website -Name "VitePressSite" -Port 80 -PhysicalPath "C:\web\vitepress-app" -ApplicationPool "VitePressAppPool"
+            } else {
+              Set-ItemProperty "IIS:\Sites\VitePressSite" -Name physicalPath -Value "C:\web\vitepress-app"
+            }
+
+            # 设置默认文档
+            Add-WebConfiguration -Filter "/system.webServer/defaultDocument/files" -Value @{value='index.html'} -Force
+
+            # 权限设置
+            icacls "C:\web\vitepress-app" /grant "IIS_IUSRS:(OI)(CI)R" /T
+
+            # 重启服务
             iisreset /restart
+            Write-Output "IIS configuration completed successfully"
