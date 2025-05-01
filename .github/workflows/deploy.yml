@@ -41,28 +41,28 @@ jobs:
         with:
           path: .vitepress/dist
 
-      # 准备 IIS 部署包
-      - name: Create IIS Package
-        run: |
-          # 确保目录存在
-          if [ ! -d ".vitepress/dist" ]; then
-            echo "❌ Error: .vitepress/dist not found!"
-            ls -la .vitepress
-            exit 1
-          fi
-          
-          # 创建压缩包
-          tar -czf dist-iis.tar.gz -C .vitepress/dist .
-          
-          # 验证
-          echo "Package contents:"
-          tar -tf dist-iis.tar.gz | wc -l
-
-      - name: Upload IIS Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist-iis
-          path: dist-iis.tar.gz
+#      # 准备 IIS 部署包
+#      - name: Create IIS Package
+#        run: |
+#          # 确保目录存在
+#          if [ ! -d ".vitepress/dist" ]; then
+#            echo "❌ Error: .vitepress/dist not found!"
+#            ls -la .vitepress
+#            exit 1
+#          fi
+#
+#          # 创建压缩包
+#          tar -czf dist-iis.tar.gz -C .vitepress/dist .
+#
+#          # 验证
+#          echo "Package contents:"
+#          tar -tf dist-iis.tar.gz | wc -l
+#
+#      - name: Upload IIS Artifact
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: dist-iis
+#          path: dist-iis.tar.gz
 
   # GitHub Pages 部署
   deploy-to-pages:
@@ -76,34 +76,34 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Windows IIS 部署（密码认证版）
-  deploy-to-iis:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: dist-iis
-
-      - name: Debug Package
-        run: |
-          echo "Downloaded package:"
-          ls -la
-          echo "Package contents:"
-          tar -tf dist-iis.tar.gz | head -n 5
-
-      - uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          source: "dist-iis.tar.gz"
-          target: "C:\\Temp\\"
-
-      - uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          script: |
-            rmdir /s /q "C:\web\vitepress-app" && mkdir "C:\web\vitepress-app" && tar -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vitepress-app"
+#  # Windows IIS 部署（密码认证版）
+#  deploy-to-iis:
+#    needs: build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/download-artifact@v4
+#        with:
+#          name: dist-iis
+#
+#      - name: Debug Package
+#        run: |
+#          echo "Downloaded package:"
+#          ls -la
+#          echo "Package contents:"
+#          tar -tf dist-iis.tar.gz | head -n 5
+#
+#      - uses: appleboy/scp-action@master
+#        with:
+#          host: ${{ secrets.SERVER_IP }}
+#          username: ${{ secrets.SERVER_USER }}
+#          password: ${{ secrets.SERVER_PASSWORD }}
+#          source: "dist-iis.tar.gz"
+#          target: "C:\\Temp\\"
+#
+#      - uses: appleboy/ssh-action@master
+#        with:
+#          host: ${{ secrets.SERVER_IP }}
+#          username: ${{ secrets.SERVER_USER }}
+#          password: ${{ secrets.SERVER_PASSWORD }}
+#          script: |
+#            rmdir /s /q "C:\web\vitepress-app" && mkdir "C:\web\vitepress-app" && tar -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vitepress-app"
