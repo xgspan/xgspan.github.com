@@ -106,25 +106,13 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            chcp 65001 > nul
-            :: 清理旧部署
-            if exist "C:\web\vitepress-app" (
-                rmdir /s /q "C:\web\vitepress-app"
-            )
-            mkdir "C:\web\vitepress-app"
-            
-            :: 解压
-            tar --version > nul 2>&1
-            if %errorlevel% equ 0 (
-                tar -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vitepress-app"
-            ) else (
-                echo "Tar not found, using built-in Windows tar"
-                "C:\Windows\system32\tar.exe" -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vitepress-app"
-            )
-            
-            :: 验证
+            # 使用 Windows 原生 Expand-Archive
+            if not exist "C:\web\vitepress-app" mkdir C:\web\vitepress-app
+            tar -xzf C:\Temp\dist-iis.tar.gz -C C:\web\vitepress-app
+
+            # 验证
             if not exist "C:\web\vitepress-app\index.html" (
-                echo ERROR: Deployment failed!
+                echo "❌ 错误：解压失败"
+                dir C:\web\vitepress-app
                 exit 1
             )
-            echo ✅ Deployment successful
