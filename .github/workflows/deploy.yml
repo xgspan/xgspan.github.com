@@ -107,14 +107,14 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             # 方法1：强制清理后解压（推荐用于CI/CD）
-            Remove-Item C:\web\vitepress-app -Recurse -Force -ErrorAction SilentlyContinue
-            mkdir C:\web\vitepress-app -Force
-            tar -xzf C:\Temp\dist-iis.tar.gz -C C:\web\vitepress-app
+            Remove-Item C:\web-html\vitepress-app -Recurse -Force -ErrorAction SilentlyContinue
+            mkdir C:\web-html\vitepress-app -Force
+            tar -xzf C:\Temp\dist-iis.tar.gz -C C:\web-html\vitepress-app
             
             # 验证
             echo "Server contents after:"
-            ls -la C:\web\vitepress-app
-            if (!(Test-Path C:\web\vitepress-app\index.html)) {
+            ls -la C:\web-html\vitepress-app
+            if (!(Test-Path C:\web-html\vitepress-app\index.html)) {
               echo "❌ Error: index.html not found!"
               exit 1
             }
