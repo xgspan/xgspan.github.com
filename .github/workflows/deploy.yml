@@ -106,15 +106,23 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            # 方法1：强制清理后解压（推荐用于CI/CD）
-            Remove-Item C:\web-html\vitepress-app -Recurse -Force -ErrorAction SilentlyContinue
-            mkdir C:\web-html\vitepress-app -Force
-            tar -xzf C:\Temp\dist-iis.tar.gz -C C:\web-html\vitepress-app
-            
-            # 验证
-            echo "Server contents after:"
-            ls -la C:\web-html\vitepress-app
-            if (!(Test-Path C:\web-html\vitepress-app\index.html)) {
-              echo "❌ Error: index.html not found!"
-              exit 1
+            # 判断是否是 PowerShell 环境
+            if ($PSVersionTable) {
+                # PowerShell 方式
+                Remove-Item C:\web\vitepress-app -Recurse -Force -ErrorAction SilentlyContinue
+                mkdir C:\web\vitepress-app -Force
+                tar -xzf C:\web\dist-iis.tar.gz -C C:\web\vitepress-app
+                Write-Output "✅ PowerShell 解压完成"
+            } else {
+                # CMD 方式
+                rmdir /s /q C:\web\vitepress-app
+                mkdir C:\web\vitepress-app
+                tar -xzf C:\web\dist-iis.tar.gz -C C:\web\vitepress-app
+                echo ✅ CMD 解压完成
             }
+            
+            # 验证解压结果（通用）
+            if not exist "C:\web\vitepress-app\index.html" (
+                echo ❌ 错误：index.html 不存在
+                exit 1
+            )
