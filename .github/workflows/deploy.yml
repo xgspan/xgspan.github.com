@@ -106,14 +106,4 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            if exist "C:\web\vitepress-app" (
-            rmdir /s /q "C:\web\vitepress-app"
-            )
-            mkdir "C:\web\vitepress-app"
-            
             tar -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vitepress-app"
-            
-            if not exist "C:\web\vitepress-app\index.html" (
-            echo ERROR: index.html missing!
-            exit 1
-            )
