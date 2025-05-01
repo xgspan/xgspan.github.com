@@ -1,4 +1,4 @@
-name: Deploy VitePress to GitHub Pages and IIS
+name: Deploy VitePress to GitHub Pages and IIS (Password Auth)
 
 on:
   push:
@@ -66,7 +66,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Windows IIS 部署
+  # Windows IIS 部署（密码认证版）
   deploy-to-iis:
     needs: build
     runs-on: ubuntu-latest
@@ -76,21 +76,22 @@ jobs:
         with:
           name: dist-iis
 
-      - name: Deploy via SSH
+      - name: Deploy via SCP (Password)
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          password: ${{ secrets.SERVER_PASSWORD }}
           source: "dist-iis.tar.gz"
           target: "C:\\web\\dist-iis.tar.gz"
+          strip_components: 1
 
-      - name: Extract and Configure IIS
+      - name: Configure IIS (Password)
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             # 创建目标目录
             mkdir C:\web\vitepress-app -Force
