@@ -106,13 +106,14 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-
-            Remove-Item C:\web\vitepress-app -Recurse -Force -ErrorAction SilentlyContinue
-            New-Item -ItemType Directory -Path C:\web\vitepress-app -Force | Out-Null
-            tar -xzf C:\web\dist-iis.tar.gz -C C:\web\vitepress-app
+            if exist "C:\web\vitepress-app" (
+            rmdir /s /q "C:\web\vitepress-app"
+            )
+            mkdir "C:\web\vitepress-app"
             
-
-            if (!(Test-Path C:\web\vitepress-app\index.html)) {
-                Write-Error "❌ 解压失败：index.html 不存在"
-                exit 1
-            }
+            tar -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vitepress-app"
+            
+            if not exist "C:\web\vitepress-app\index.html" (
+            echo ERROR: index.html missing!
+            exit 1
+            )
