@@ -42,8 +42,8 @@ jobs:
 
       - name: Prepare IIS Deployment Artifact
         run: |
-          mkdir -p dist-iis/.vitepress
-          cp -r .vitepress/dist dist-iis/.vitepress/
+          mkdir -p dist-iis
+          cp -r .vitepress/dist/* dist-iis/
           tar -czf dist-iis.tar.gz dist-iis
 
       - name: Upload IIS Artifact
@@ -65,9 +65,9 @@ jobs:
 
   deploy-to-iis:
     needs: build
-    runs-on: ubuntu-latest  # 统一使用 Linux 环境，避免切换
+    runs-on: ubuntu-latest
     steps:
-      - name: Download Artifact
+      - name: Download IIS Artifact
         uses: actions/download-artifact@v3
         with:
           name: dist-iis
@@ -80,7 +80,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: "dist-iis.tar.gz"
           target: "C:\\web\\dist-iis.tar.gz"
-          strip_components: 1
 
       - name: Configure IIS via SSH
         uses: appleboy/ssh-action@master
@@ -89,17 +88,15 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            # 解压到目标目录
+            # 创建目标目录
             mkdir C:\web\vitepress-app -Force
-            tar -xzf C:\web\dist-iis.tar.gz -C C:\web\vitepress-app --overwrite
+            # 解压文件
+            tar -xzf C:\web\dist-iis.tar.gz -C C:\web\vitepress-app --strip-components=1
             del C:\web\dist-iis.tar.gz
-
-            # 配置 IIS（幂等操作）
+            # 配置 IIS
             Import-Module WebAdministration
             if (!(Test-Path IIS:\Sites\VitePressSite)) {
-              New-WebSite -Name "VitePressSite" -Port 80 -PhysicalPath "C:\web\vitepress-app\.vitepress\dist" -ApplicationPool "DefaultAppPool"
+              New-WebSite -Name "VitePressSite" -Port 80 -PhysicalPath "C:\web\vitepress-app" -ApplicationPool "DefaultAppPool"
+              Add-WebConfiguration -Filter "/system.webServer/defaultDocument/files" -Value @{value='index.html'}
             }
-            # 确保默认文档
-            Add-WebConfiguration -Filter "/system.webServer/defaultDocument/files" -Value @{value='index.html'} -Force
-            # 重启 IIS
             iisreset /restart
