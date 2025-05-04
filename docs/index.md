@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: 小怪兽
-  text: 资源分享
-  tagline: 宝藏资源分享平台
+  text: 资源分享 (网站升级） 
+  tagline: 宝藏资源分享平台（部分连接暂时用不了， 需要可以加群）
   image:
     src: /logo/logo.jpg
     alt: VitePress
