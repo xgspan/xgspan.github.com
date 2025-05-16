@@ -1,4 +1,4 @@
-name: Deploy VitePress to GitHub Pages and IIS (Password Auth)
+name: Deploy VuePress to GitHub Pages and IIS (Password Auth)
 
 on:
   push:
@@ -32,27 +32,27 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build with VitePress
+      - name: Build with VuePress
         run: npm run docs:build
 
       # 上传到 GitHub Pages
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .vitepress/dist
+          path: .vuepress/dist
 
 #      # 准备 IIS 部署包
 #      - name: Create IIS Package
 #        run: |
 #          # 确保目录存在
-#          if [ ! -d ".vitepress/dist" ]; then
-#            echo "❌ Error: .vitepress/dist not found!"
-#            ls -la .vitepress
+#          if [ ! -d ".vuepress/dist" ]; then
+#            echo "❌ Error: .vuepress/dist not found!"
+#            ls -la .vuepress
 #            exit 1
 #          fi
 #
 #          # 创建压缩包
-#          tar -czf dist-iis.tar.gz -C .vitepress/dist .
+#          tar -czf dist-iis.tar.gz -C .vuepress/dist .
 #
 #          # 验证
 #          echo "Package contents:"
@@ -106,4 +106,4 @@ jobs:
 #          username: ${{ secrets.SERVER_USER }}
 #          password: ${{ secrets.SERVER_PASSWORD }}
 #          script: |
-#            rmdir /s /q "C:\web\vitepress-app" && mkdir "C:\web\vitepress-app" && tar -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vitepress-app"
+#            rmdir /s /q "C:\web\vuepress-app" && mkdir "C:\web\vuepress-app" && tar -xzf "C:\Temp\dist-iis.tar.gz" -C "C:\web\vuepress-app"
