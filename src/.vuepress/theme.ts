@@ -120,7 +120,7 @@ export default hopeTheme({
   plugins: {
     docsearch: {
       appId: '63ALYN1PAM',
-      apiKey: '80c485a8975d5cb67ec5a5ba6e72671a',
+      apiKey: 'd657a40928280b6b77e9e4ca35983a61',
       indexName: 'xgs_pages',
       indexBase:'https://xgs.icu',
       locales: {
