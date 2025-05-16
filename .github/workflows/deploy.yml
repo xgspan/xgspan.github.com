@@ -39,7 +39,7 @@ jobs:
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .vuepress/dist
+          path: src/.vuepress/dist
 
 #      # 准备 IIS 部署包
 #      - name: Create IIS Package
