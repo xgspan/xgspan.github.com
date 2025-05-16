@@ -1,15 +1,21 @@
 {
-  "devDependencies": {
-    "unplugin-vue-components": "^0.27.4",
-    "vite-plugin-vitepress-auto-sidebar": "^1.7.0",
-    "vitepress": "^1.4.1"
-  },
+  "name": "xgs-website",
+  "description": "A project of vuepress-theme-hope",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev --open",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:build": "vuepress-vite build src",
+    "docs:clean-dev": "vuepress-vite dev src --clean-cache",
+    "docs:dev": "vuepress-vite dev src",
+    "docs:update-package": "npx vp-update"
   },
-  "dependencies": {
-    "ant-design-vue": "^4.2.5"
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.23",
+    "@vuepress/plugin-docsearch": "^2.0.0-rc.104",
+    "sass-embedded": "^1.88.0",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.23",
+    "vuepress-theme-hope": "2.0.0-rc.88"
   }
 }

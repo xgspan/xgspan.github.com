@@ -1,0 +1,20 @@
+{
+  "banner": [
+    {
+      "title": "【动漫专区】",
+      "content": "「全网最强工具+看番攻略」",
+      "logo": "/assets/banner/动漫.jpg",
+      "link": "/dongman/"
+    },
+    {
+      "title": "【漫画专区】",
+      "content": "资源整理中...",
+      "logo": "/assets/banner/漫画.png"
+    },
+    {
+      "title": "【影视专区】",
+      "content": "资源整理中...",
+      "logo": "/assets/banner/影视.png"
+    }
+  ]
+}
