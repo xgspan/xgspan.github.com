@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 /**
  * 生成带固定透明度（0.15）的 RGBA 颜色
  * @param r 红色（0-255），不传则随机生成
@@ -19,4 +21,8 @@ export function generateRGBA(r?: number, g?: number, b?: number, alpha= 0.15): s
 
     // 返回格式化字符串
     return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+}
+
+export function day(){
+    return  dayjs().format('YYYY年M月D日');
 }

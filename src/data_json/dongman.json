@@ -1,10 +1,10 @@
 {
   "test": [
     {
-      "title":"【动漫】",
-      "desc": "「全网最强工具+看番攻略」",
-      "logo":"/assets/banner/动漫.jpg",
-      "link":"https://theme-hope.vuejs.press/zh/config/intro.html#%E4%BD%BF%E7%94%A8%E4%B8%BB%E9%A2%98"
+      "title":"免费畅看全网动漫！",
+      "desc": "Android、ios、平板",
+      "logo":"/assets/card-logo/wukong.jpeg",
+      "link":"/dongman/wukong"
     }
   ]
 }

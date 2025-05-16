@@ -118,6 +118,26 @@ export default hopeTheme({
   },
   // 在这里配置主题提供的插件
   plugins: {
+    readingTime:false,
+    copyCode:{
+      showInMobile:true
+    },
+    // notice: [
+    //   {
+    //     path: "/",
+    //     title: "网站公告",
+    //     content: "Notice Content",
+    //     actions: [
+    //       {
+    //         text: "Primary Action",
+    //         link: "https://theme-hope.vuejs.press/",
+    //         type: "primary",
+    //       },
+    //       { text: "Default Action" },
+    //     ],
+    //   }
+    // ],
+
     docsearch: {
       appId: '63ALYN1PAM',
       apiKey: 'd657a40928280b6b77e9e4ca35983a61',

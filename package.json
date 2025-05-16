@@ -17,5 +17,8 @@
     "vue": "^3.5.13",
     "vuepress": "2.0.0-rc.23",
     "vuepress-theme-hope": "2.0.0-rc.88"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13"
   }
 }
