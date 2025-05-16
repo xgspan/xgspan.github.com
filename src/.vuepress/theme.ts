@@ -121,7 +121,7 @@ export default hopeTheme({
     docsearch: {
       appId: '63ALYN1PAM',
       apiKey: '80c485a8975d5cb67ec5a5ba6e72671a',
-      indexName: 'web-xgs',
+      indexName: 'web_xgs_articles',
       indexBase:'https://xgs.icu/',
       locales: {
         '/': {
