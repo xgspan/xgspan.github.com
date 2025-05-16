@@ -4,7 +4,7 @@ index: false
 ---
 
 <script setup>
-import data from '@data/dongman.json'
+import data from '@data/dongman.json';
 import {generateRGBA} from '@tools/utils.ts'
 </script>
 
