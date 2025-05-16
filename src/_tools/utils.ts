@@ -23,6 +23,9 @@ export function generateRGBA(r?: number, g?: number, b?: number, alpha= 0.15): s
     return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
 }
 
+/**
+ * 当前时间 YYYY年M月D日
+ */
 export function day(){
     return  dayjs().format('YYYY年M月D日');
 }

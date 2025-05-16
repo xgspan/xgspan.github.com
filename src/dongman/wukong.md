@@ -7,7 +7,6 @@ tag:
 
 <script setup>
 import {day} from '@tools/utils.ts'
-
 </script>
 
 
