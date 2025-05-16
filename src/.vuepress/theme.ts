@@ -122,7 +122,6 @@ export default hopeTheme({
       appId: '63ALYN1PAM',
       apiKey: 'd657a40928280b6b77e9e4ca35983a61',
       indexName: 'xgs_pages',
-      indexBase:'https://xgs.icu',
       locales: {
         '/': {
           placeholder: '搜索关键词',
