@@ -29,9 +29,10 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Clean and reinstall dependencies
         run: |
-          rm -rf node_modules/ package-lock.json
+          rm -rf node_modules/ package-lock.json .npm
+          npm cache clean --force
           npm install
 
 #      - name: Install dependencies
