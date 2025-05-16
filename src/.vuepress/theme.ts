@@ -120,7 +120,7 @@ export default hopeTheme({
   plugins: {
     docsearch: {
       appId: '63ALYN1PAM',
-      apiKey: '5e500c4b895b1404d0b241239a5300db',
+      apiKey: '69aae76b61dc8d24509c84cd4435b269',
       indexName: 'xgs',
     },
 
