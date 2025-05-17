@@ -1,6 +1,9 @@
 ---
 title: 动漫
 index: false
+icon: /assets/tubiao/动漫.svg
+category:
+  - 动漫
 ---
 
 <script setup>

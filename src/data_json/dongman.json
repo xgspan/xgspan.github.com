@@ -1,10 +1,16 @@
 {
   "test": [
     {
-      "title":"免费畅看全网动漫！",
+      "title":"畅看全网动漫!",
       "desc": "Android、ios、平板",
-      "logo":"/assets/card-logo/wukong.jpeg",
+      "logo":"/assets/card-logo/悟空.jpg",
       "link":"/dongman/wukong"
+    },
+    {
+      "title":"全网动漫资源 \uD83D\uDD1E ",
+      "desc": "Android、ios、平板",
+      "logo":"/assets/card-logo/夸克.png",
+      "link":"/dongman/kuake"
     }
   ]
 }

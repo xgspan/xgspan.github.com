@@ -1,7 +1,9 @@
 import { defineUserConfig } from "vuepress";
 
 import theme from "./theme.js";
-import path from "path";
+import { getDirname, path } from "vuepress/utils";
+const __dirname = getDirname(import.meta.url);
+
 
 export default defineUserConfig({
   base: "/",
@@ -9,7 +11,6 @@ export default defineUserConfig({
   title: "小怪兽宝藏",
   description: "宝藏分享",
   theme,
-
   alias: {
     "@data": path.resolve(__dirname, "../data_json/"),
     "@tools": path.resolve(__dirname, "../_tools/"),

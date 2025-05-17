@@ -1,7 +1,7 @@
 import type { VNode } from "vue";
 import { computed, defineComponent, h } from "vue";
 import { useRouteLocale } from "vuepress/client";
-import {qq_qun} from './data.json'
+import {qq_qun} from '../data/data.json'
 
 export default defineComponent({
     name: "SocialLink",

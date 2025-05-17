@@ -3,6 +3,9 @@ import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
+import { getDirname, path } from "vuepress/utils";
+const __dirname = getDirname(import.meta.url);
+
 export default hopeTheme({
   hostname: "https://xgs.icu/",
 
@@ -24,6 +27,7 @@ export default hopeTheme({
 
   // 页脚
   displayFooter: true,
+  print: false,
 
   // 加密配置
   encrypt: {
@@ -34,7 +38,6 @@ export default hopeTheme({
       },
     },
   },
-
 
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   // hotReload: true,
@@ -50,7 +53,13 @@ export default hopeTheme({
     // gfm: true,
     imgLazyload: true,
     imgSize: true,
-    // include: true, // 导入文件
+    include: {
+      resolvePath: (file) => {
+        if (file.startsWith("@common"))
+          return file.replace("@common", path.resolve(__dirname, "../common"));
+        return file;
+      },
+    },
     mark: true, // 标记 黄色 ==文字== 哈哈
     // plantuml: true, // uml
     // spoiler: true,  // 黑色一覆盖  隐藏文字
@@ -163,7 +172,7 @@ export default hopeTheme({
       //     // services: ['qq'],
       //   },
       // },
-    }
+    },
 
     // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
     // comment: {
@@ -178,9 +187,9 @@ export default hopeTheme({
     //   components: ["Badge", "VPCard"],
     // },
     //
-    // icon: {
-    //   prefix: "fa6-solid:",
-    // },
+    icon: {
+      assets: "fontawesome",
+    },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
     // pwa: {
@@ -239,4 +248,6 @@ export default hopeTheme({
     //   },
     // },
   },
-});
+},
+    // { custom: true }
+);
