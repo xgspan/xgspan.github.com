@@ -1,0 +1,28 @@
+{
+  "mobile": [
+    {
+      "title":"安卓",
+      "desc": "Android",
+      "logo":"/assets/card-logo/悟空.jpg",
+      "link":"/dongman/wukong"
+    },
+    {
+      "title":"苹果",
+      "desc": "Android",
+      "logo":"/assets/card-logo/夸克.png",
+      "link":"/dongman/kuake"
+    },
+    {
+      "title":"电视",
+      "desc": "Android、",
+      "logo":"/assets/card-logo/夸克.png",
+      "link":"/dongman/kuake"
+    },
+    {
+      "title":"电脑",
+      "desc": "Android",
+      "logo":"/assets/card-logo/夸克.png",
+      "link":"/dongman/kuake"
+    }
+  ]
+}

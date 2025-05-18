@@ -2,9 +2,15 @@
   "banner": [
     {
       "title": "【动漫专区】",
-      "content": "全网动漫，国漫、日漫、韩漫...",
+      "content": "二次元必备，追番追漫抢先看...",
       "logo": "/assets/banner/动漫.jpg",
       "link": "/dongman/"
+    },
+    {
+      "title": "【软件工具】",
+      "content": "白嫖党福利...",
+      "logo": "/assets/banner/软件工具.jpg",
+      "link": "/ruanjiangongju/"
     }
   ]
 }
