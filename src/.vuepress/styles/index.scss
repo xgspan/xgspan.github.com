@@ -94,20 +94,20 @@ iframe.youtube-video {
 
 /* 箭头的动画 */
 .vp-hero-slide-down-button {
+  bottom: 100px;
   display: inline-block;
   animation: bounce 1.5s infinite ease-in-out;
+  will-change: transform; /* 提示浏览器优化 transform 属性 */
 }
 
-/* 定义动画 */
 @keyframes bounce {
   0%, 100% {
-    transform: translateY(0);
+    transform: scale(1.5) translateY(0);
   }
   50% {
-    transform: translateY(10px);
+    transform: scale(1.5) translateY(10px);
   }
 }
-
 
 //.details {
 //  background-color: #f8f8f8 !important; // 自定义背景色
