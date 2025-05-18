@@ -19,3 +19,5 @@ v-for="(val,key) in data.mobile"
 :key="key"
 :background="generateRGBA()"
 v-bind="val"/>
+
+<MyTabs/>
