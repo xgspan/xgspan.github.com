@@ -30,7 +30,9 @@ import {day} from '@tools/utils.ts'
 
 ## 🔑 第二步：获取激活码
 
-💡 *小提示：安装完成后，建议 ==用手机号登录== 后在输入激活码，可以永久激活不怕更新*
+::: note   小提示
+安装完成后，建议 ==用手机号登录== 后在输入激活码，可以永久激活不怕更新
+:::
 
 安装完成后，打开APP激活
 
@@ -59,5 +61,5 @@ import {day} from '@tools/utils.ts'
 
 ---
 
-<!-- @include: @common/tongzhi.md -->
+<!-- @include: @common/xuzhi.md -->
 

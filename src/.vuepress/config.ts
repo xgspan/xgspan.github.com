@@ -11,6 +11,13 @@ export default defineUserConfig({
   title: "小怪兽宝藏",
   description: "宝藏分享",
   theme,
+  // 添加 head 配置
+  head: [
+    ["meta", {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    }]
+  ],
   alias: {
     "@data": path.resolve(__dirname, "../data_json/"),
     "@tools": path.resolve(__dirname, "../_tools/"),

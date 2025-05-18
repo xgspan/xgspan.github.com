@@ -28,6 +28,9 @@ export default hopeTheme({
   // 页脚
   displayFooter: true,
   print: false,
+  pageInfo: ["Author", "Original", "Date", "Category", "Tag"],
+  footer: "欢迎点右上角↗️QQ图标，加入我们😍~",
+  copyright: false,
 
   // 加密配置
   encrypt: {
@@ -39,6 +42,8 @@ export default hopeTheme({
     },
   },
 
+  lastUpdated:false, // 最后更新时间
+  contributors: false, // 贡献者
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   // hotReload: true,
 
