@@ -29,3 +29,12 @@ export function generateRGBA(r?: number, g?: number, b?: number, alpha= 0.15): s
 export function day(){
     return  dayjs().format('YYYY年M月D日');
 }
+
+
+export const isExternalLink = (url, base = '/') => {
+    return (
+        /^[a-z]+:/i.test(url) ||      // 协议开头的链接 (http:, https:, mailto: 等)
+        url.startsWith('//') ||        // 双斜杠开头的链接
+        (url.startsWith('/') && !url.startsWith(base)) // 不以 base 开头的绝对路径
+    )
+}

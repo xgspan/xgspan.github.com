@@ -1,36 +1,44 @@
 <template>
-  <div class="tabs-wrap">
-    <!-- Tabs 组件 -->
-    <Tabs v-model:activeKey="activeKey" :tabBarGutter="15" centered>
-      <template #leftExtra>
-        <!-- 这里放你的自定义内容 -->
-        <div class="leftExtra-wrap">
-          <img v-if="props.icon" :src="props.icon" alt="" class="icon-img">
-          <span v-if="props.title" class="title-wrap">{{ props.title }}</span>
-          <img :class="isClose&&'zhedie-xuanzhuan'" alt="" class="zhedie-img " src="/assets/tools-icon/zhedie.svg"
-               @click="btnClick">
-        </div>
-      </template>
-
-      <TabPane v-for="item in props.tabsData" :key="item.tab" :tab="item.tab">
-        <div :class="isClose&&'tab-pane-close'" class="h100 background-gradient-zhenzhu">
-          <div class="app-card-wrap">
-            <AppCard v-for="appdata in item.data" :key="appdata.title" class="app-card-item" v-bind="appdata"/>
+  <ConfigProvider
+      :theme="{
+      token: {
+        colorPrimary: '#00b96b',
+      },
+    }"
+  >
+    <div class="tabs-wrap">
+      <!-- Tabs 组件 -->
+      <Tabs v-model:activeKey="activeKey" :tabBarGutter="15" centered>
+        <template #leftExtra>
+          <!-- 这里放你的自定义内容 -->
+          <div class="leftExtra-wrap">
+            <img v-if="props.icon" :src="props.icon" alt="" class="icon-img">
+            <span v-if="props.title" class="title-wrap">{{ props.title }}</span>
+            <img :class="isClose&&'zhedie-xuanzhuan'" alt="" class="zhedie-img " src="/assets/tools-icon/zhedie.svg"
+                 @click="btnClick">
           </div>
+        </template>
 
+        <TabPane v-for="item in props.tabsData" :key="item.tab" :tab="item.tab">
+          <div :class="isClose&&'tab-pane-close'" class="h100 background-gradient-zhenzhu">
+            <div class="app-card-wrap">
+              <AppCard v-for="appdata in item.data" :key="appdata.title" class="app-card-item" v-bind="appdata"/>
+            </div>
+
+          </div>
+        </TabPane>
+        <div class="tab-pane-wrap">
         </div>
-      </TabPane>
-      <div class="tab-pane-wrap">
-      </div>
 
-    </Tabs>
+      </Tabs>
+    </div>
 
+  </ConfigProvider>
 
-  </div>
 </template>
 <script lang="ts" setup>
 import {ref} from 'vue';
-import {TabPane, Tabs} from 'ant-design-vue'
+import {TabPane, Tabs,ConfigProvider ,Checkbox,Radio} from 'ant-design-vue'
 
 import AppCard, {AppCardType} from "./AppCard.vue";
 

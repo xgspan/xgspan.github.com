@@ -1,32 +1,36 @@
 <template>
 
+  <SmartLink :href="props.link || ''">
+    <div class="app-card-wrapper"
+         @click="handleClick"
+         @mouseleave="resetAnimation" @mouseover="startAnimation">
+      <div class="tag-wrap">
+        <template v-if="handleIconSrc.length">
 
-  <div class="app-card-wrapper"
-       @mouseleave="resetAnimation"
-       @mouseover="startAnimation">
-    <div class="tag-wrap">
-      <template v-if="handleIconSrc.length" >
+          <img v-for="src in handleIconSrc" :src="src" alt="" class="icon-tag"/>
+        </template>
+        <template v-else>
+          <img alt="" class="icon-tag" src="/assets/tubiao/跳转.svg"/>
 
-      <img v-for="src in handleIconSrc" :src="src" alt="" class="icon-tag"/>
-      </template>
-      <template v-else>
-        <img  src="/assets/tubiao/跳转.svg" alt="" class="icon-tag"/>
-
-      </template>
+        </template>
+      </div>
+      <img v-if="props.icon" :class="is_animate&&animate_class" :src="props.icon" alt="" class="icon">
+      <div class="content-wrapper">
+        <div class="title">{{ props.title }}</div>
+        <div v-if="props.desc" class="desc">{{ props.desc }}</div>
+      </div>
     </div>
-    <img v-if="props.icon" :class="is_animate&&animate_class" :src="props.icon" alt="" class="icon">
-    <div class="content-wrapper">
-      <div class="title">{{ props.title }}</div>
-      <div class="desc" v-if="props.desc">{{ props.desc }}</div>
-    </div>
-  </div>
+  </SmartLink>
 </template>
 
 <script lang="ts" setup>
 import {computed, ref} from "vue";
+import SmartLink from "./SmartLink.vue";
+
 
 export interface AppCardType {
   title: string;
+  link?: string;
   desc?: string;
   icon?: string;
   tag?: string;
@@ -58,9 +62,13 @@ function startAnimation() {
 function resetAnimation() {
   is_animate.value = false
 }
+
+function handleClick() {
+
+}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .app-card-wrapper {
   background: #fff;
   border-radius: 8px;
@@ -69,7 +77,7 @@ function resetAnimation() {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  padding: 15px;
+  padding: 20px 10px;
   box-sizing: border-box;
   cursor: pointer;
   position: relative;
@@ -91,18 +99,24 @@ function resetAnimation() {
     flex: 1;
     min-width: 0;
 
-    .title {
-      font-weight: bold;
-    }
-
-    .desc {
-      font-family: 'pvzgeFontEN';
-      color: #666;
+    .text-ellipsis {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       width: 100%;
       font-size: 12px;
+    }
+
+    .title {
+      font-weight: bold;
+      @extend .text-ellipsis;
+
+    }
+
+    .desc {
+      font-family: 'pvzgeFontEN';
+      color: #666;
+      @extend .text-ellipsis;
     }
   }
 

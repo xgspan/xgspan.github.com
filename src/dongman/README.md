@@ -12,10 +12,4 @@ import {generateRGBA} from '@tools/utils.ts'
 
 # 动漫
 
-## 正版官方 (附~ 激活码)
-
-<VPCard
-    v-for="(val,key) in data.sousuo"
-    :key="key"
-    :background="generateRGBA()"
-     v-bind="val"/>
+<MyTabs v-bind="data.sousuo" />

@@ -27,7 +27,7 @@ export default defineUserConfig({
 
     alias: {
         "@data": path.resolve(__dirname, "../data_json/"),
-        "@tools": path.resolve(__dirname, "../_tools/"),
+        "@tools": path.resolve(__dirname, "./tools/"),
     },
 
     // 和 PWA 一起启用

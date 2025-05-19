@@ -1,5 +1,5 @@
 {
-  "sousuo": [
+  "sousu1o": [
     {
       "title":"畅看全网动漫!",
       "desc": "Android、ios、平板",
@@ -12,5 +12,29 @@
       "logo":"/assets/card-logo/夸克.png",
       "link":"/dongman/kuake"
     }
-  ]
+  ],
+  "sousuo": {
+    "icon": "/logo.png",
+    "title": "动漫~在线11112312312312312",
+    "tabsData": [
+      {
+        "tab": "网盘1111",
+        "data": [
+          {
+
+            "tag": "i,a,p",
+            "icon": "/logo.png",
+            "title": "BT影视123123123123123",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          },
+          {
+            "tag": "i,a,p",
+            "icon": "/logo.png",
+            "title": "畅看全网动漫!",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          }
+        ]
+      }
+    ]
+  }
 }
