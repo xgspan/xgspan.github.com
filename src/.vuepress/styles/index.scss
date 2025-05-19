@@ -127,3 +127,19 @@ iframe.youtube-video {
 //.details:hover {
 //  background-color: #f0f7ff !important;
 //}
+
+.background-gradient-zhenzhu { // 珍珠母贝渐变
+  background: linear-gradient(to right bottom,
+          #fff9f9 0%,
+          #f8f4ff 25%,
+          #f0f5ff 50%,
+          #f4f9ff 75%,
+          #fafafa 100%);
+}
+.background-gradient-jiguang { // 北欧极光渐变
+  background: linear-gradient(120deg,
+          #f0f5ff 0%,
+          #e6f0ff 33%,
+          #d9ecff 66%,
+          #e6f7ff 100%);
+}

@@ -1,28 +1,76 @@
 {
-  "mobile": [
-    {
-      "title":"安卓",
-      "desc": "Android",
-      "logo":"/assets/card-logo/悟空.jpg",
-      "link":"/dongman/wukong"
-    },
-    {
-      "title":"苹果",
-      "desc": "Android",
-      "logo":"/assets/card-logo/夸克.png",
-      "link":"/dongman/kuake"
-    },
-    {
-      "title":"电视",
-      "desc": "Android、",
-      "logo":"/assets/card-logo/夸克.png",
-      "link":"/dongman/kuake"
-    },
-    {
-      "title":"电脑",
-      "desc": "Android",
-      "logo":"/assets/card-logo/夸克.png",
-      "link":"/dongman/kuake"
-    }
-  ]
+  "yingshi": {
+    "icon": "/logo.png",
+    "title": "影视",
+    "tabsData": [
+      {
+        "tab": "网盘",
+        "data": [
+          {
+            "tag": "i,a,p",
+            "icon": "/logo.png",
+            "title": "BT影视",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          },
+          {
+            "icon": "/logo.png",
+            "title": "BT影视1",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          },
+          {
+            "tag": "a ,p",
+            "icon": "/logo.png",
+            "title": "BT影视2",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          },
+          {
+            "icon": "/logo.png",
+            "title": "BT影视3",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          },
+          {
+            "icon": "/logo.png",
+            "title": "BT影视4",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          },
+          {
+            "icon": "/logo.png",
+            "title": "BT影视5",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          },
+          {
+            "icon": "/logo.png",
+            "title": "BT影视6",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          }
+        ]
+      },
+      {
+        "tab": "网盘2",
+        "data": [
+          {
+            "title": "BT影视",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          }
+        ]
+      },
+      {
+        "tab": "网盘3",
+        "data": [
+          {
+            "title": "BT影视"
+          }
+        ]
+      },
+      {
+        "tab": "网盘4",
+        "data": [
+          {
+            "title": "BT影视",
+            "desc": "提供4k,1080普拉斯肯定放假;阿拉山口大姐夫;按时"
+          }
+        ]
+      }
+    ]
+  }
 }
