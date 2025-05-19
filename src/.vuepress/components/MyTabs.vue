@@ -138,10 +138,11 @@ const onTabChange = (value: string, type: string) => {
     z-index: 2;
 
     .ant-tabs-ink-bar {
-      height: 30px;
+      height: 20px;
       background-color: transparent;
       background-image: url('/assets/tubiao/笔刷.svg') !important;
-      background-size: cover;
+      background-size: contain;
+      background-repeat: repeat-x; /* 背景图片在水平方向上重复 */
     }
   }
 }
