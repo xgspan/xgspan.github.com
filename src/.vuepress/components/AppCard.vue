@@ -1,26 +1,24 @@
 <template>
 
-  <SmartLink :href="props.link || ''">
-    <div class="app-card-wrapper"
+    <SmartLink class="app-card-wrapper" :href="props.link || ''"
          @click="handleClick"
          @mouseleave="resetAnimation" @mouseover="startAnimation">
+
       <div class="tag-wrap">
         <template v-if="handleIconSrc.length">
-
-          <img v-for="src in handleIconSrc" :src="src" alt="" class="icon-tag"/>
+          <img v-for="src in handleIconSrc" :src="src" alt="" class="logo-tag"/>
         </template>
         <template v-else>
-          <img alt="" class="icon-tag" src="/assets/tubiao/跳转.svg"/>
+          <img alt="" class="logo-tag" src="/assets/tubiao/跳转.svg"/>
 
         </template>
       </div>
-      <img v-if="props.icon" :class="is_animate&&animate_class" :src="props.icon" alt="" class="icon">
+      <img v-if="props.logo" :class="is_animate&&animate_class" :src="props.logo" alt="" class="logo">
       <div class="content-wrapper">
         <div class="title">{{ props.title }}</div>
         <div v-if="props.desc" class="desc">{{ props.desc }}</div>
       </div>
-    </div>
-  </SmartLink>
+    </SmartLink>
 </template>
 
 <script lang="ts" setup>
@@ -32,7 +30,7 @@ export interface AppCardType {
   title: string;
   link?: string;
   desc?: string;
-  icon?: string;
+  logo?: string;
   tag?: string;
 }
 
@@ -43,14 +41,14 @@ const props = defineProps<AppCardType>()
 
 const tags = props.tag?.trim().split(',').map(i => i.trim()) || []
 
-const tag_icons_src_map = {
+const tag_logos_src_map = {
   a: '/assets/tubiao/安卓.svg',
   i: '/assets/tubiao/苹果.svg',
   p: '/assets/tubiao/pc.svg'
 }
 
 const handleIconSrc = computed(() => {
-  return tags.map(tag => tag_icons_src_map[tag])
+  return tags.map(tag => tag_logos_src_map[tag])
 })
 
 const is_animate = ref(false)
@@ -89,10 +87,12 @@ function handleClick() {
 
   }
 
-  .icon {
+  .logo {
     width: 30px;
     height: 30px;
     margin-right: 10px;
+    border-radius: 15px;
+
   }
 
   .content-wrapper {
@@ -129,7 +129,7 @@ function handleClick() {
     /* 或者改变色调 */
     filter: grayscale(1);
 
-    .icon-tag {
+    .logo-tag {
       width: 15px;
       height: 15px;
       margin-left: 2px;

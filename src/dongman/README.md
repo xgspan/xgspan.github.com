@@ -7,9 +7,8 @@ category:
 
 <script setup>
 import data from '@data/dongman.json';
-import {generateRGBA} from '@tools/utils.ts'
 </script>
 
-# 动漫
+# 动漫专区
 
 <MyTabs v-bind="data.sousuo" />
