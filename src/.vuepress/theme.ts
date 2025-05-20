@@ -28,7 +28,7 @@ export default hopeTheme({
   // 页脚
   displayFooter: true,
   print: false,
-  pageInfo: ["Author", "Original", "Date", "Category", "Tag"],
+  pageInfo: ["Author", "Original", "Category", "Tag"],
   footer: "欢迎点右上角↗️QQ图标，加入我们😍~",
   copyright: false,
 

@@ -23,7 +23,7 @@ heroFullScreen: true
 heroText: 小怪兽宝藏
 tagline: 本站所有资源完全免费
 actions:
-  - text: 加入我们群聊
+  - text: 加入我们
     icon: /assets/tubiao/qq.svg
     link: https://qm.qq.com/cgi-bin/qm/qr?k=8Ok6nljK3XWpVAqMtLe6KubG6d035Waw&jump_from=webapi&authKey=+iTAqDLuQmLtHR3j18OSSEdZecln12Hiu/JrmqOk1eDNh1Ixo6WffbJ+HS9dYYtf
     type: primary

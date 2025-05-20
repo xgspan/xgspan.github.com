@@ -38,7 +38,7 @@
 </template>
 <script lang="ts" setup>
 import {ref} from 'vue';
-import {TabPane, Tabs,ConfigProvider ,Checkbox,Radio} from 'ant-design-vue'
+import {ConfigProvider, TabPane, Tabs} from 'ant-design-vue'
 
 import AppCard, {AppCardType} from "./AppCard.vue";
 

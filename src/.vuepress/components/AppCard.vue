@@ -34,7 +34,7 @@ export interface AppCardType {
   tag?: string;
 }
 
-const animate_class = 'animate__animated animate__swing'
+const animate_class = 'animate__animated animate__jello'
 
 
 const props = defineProps<AppCardType>()

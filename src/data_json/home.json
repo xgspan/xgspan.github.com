@@ -1,8 +1,8 @@
 {
   "banner": [
     {
-      "title": "【动漫专区】",
-      "content": "二次元必备，追番追漫抢先看...",
+      "title": "二次元",
+      "content": "二次元必备...",
       "logo": "/assets/banner/动漫.jpg",
       "link": "/dongman/"
     }

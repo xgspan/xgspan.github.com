@@ -7,6 +7,8 @@ tag:
 
 <script setup>
 import {day} from '@tools/utils.ts'
+import {Button} from 'ant-design-vue'
+import { AndroidOutlined,AppleOutlined } from '@ant-design/icons-vue';
 </script>
 
 
@@ -20,7 +22,7 @@ import {day} from '@tools/utils.ts'
 
 **下载地址：**
 
-   * [安卓手机/平板 下载地址](https://www.wkbrowser.com/)
+   * [安卓手机/平板 下载地址](https://www.wkbrowser.com/)  
    * [苹果手机/iPad 下载地址](https://apps.apple.com/cn/app/%E6%82%9F%E7%A9%BA%E6%B5%8F%E8%A7%88%E5%99%A8-%E7%9C%8B%E7%9F%AD%E5%89%A7%E5%B0%8F%E8%AF%B4%E5%BD%B1%E8%A7%86/id6473782436)
 
 **支持：**
