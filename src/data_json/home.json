@@ -2,9 +2,15 @@
   "banner": [
     {
       "title": "二次元",
-      "content": "二次元必备...",
-      "logo": "/assets/banner/动漫.jpg",
-      "link": "/dongman/"
+      "content": "动漫、漫画 全网免费看...",
+      "logo": "https://s21.ax1x.com/2025/05/23/pEz1WE8.jpg",
+      "name": "dongman"
+    },
+    {
+      "title": "游戏专区",
+      "content": "各种游戏宝藏...",
+      "logo": "https://s21.ax1x.com/2025/05/23/pEz1h4g.png",
+      "name": "youxi"
     }
   ]
 }

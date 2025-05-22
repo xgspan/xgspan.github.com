@@ -5,7 +5,7 @@ name: 宝藏资源分享
 titles:
   - 点击右上角QQ，加入我们吧！
 home: true
-icon: /assets/tubiao/主页.svg
+icon:  https://gitee.com/websongsong/tuku/raw/master/assets/tubiao/主页.svg
 title: 主页
 heroImage: logo.png
 heroImageStyle:
@@ -14,7 +14,7 @@ heroImageStyle:
   box-shadow: "0 0 12px rgba(0, 0, 0, 0.2)"
   backdrop-filter: "blur(10px)"
   background: "rgba(255, 255, 255, 0.1)"
-bgImage: /assets/bg/bg.jpg
+bgImage: https://s21.ax1x.com/2025/05/23/pEz1sgA.jpg
 bgImageStyle:
   background-attachment: fixed
   filter: brightness(60%)
@@ -38,30 +38,10 @@ import data from '@data/home.json'
 # 内容
 
 <VPBanner
-    class="jianbian op5"
-    v-for="(val,key) in data.banner"
-    :key="key"
+    v-for="val in data.banner"
+    :key="val.name"
+    :class="`banner-${val.name}`"
     v-bind="val"
-    :actions='val.link && [{ text: "进入专区", link:val.link }]' />
+    :actions='val.name && [{ text: "进入专区", link:`/${val.name}/` }]' />
 
 
-
-[//]: # (    {)
-
-[//]: # (      "title": "【漫画专区】",)
-
-[//]: # (      "content": "资源整理中...",)
-
-[//]: # (      "logo": "/assets/banner/漫画.png")
-
-[//]: # (    },)
-
-[//]: # (    {)
-
-[//]: # (      "title": "【影视专区】",)
-
-[//]: # (      "content": "资源整理中...",)
-
-[//]: # (      "logo": "/assets/banner/影视.png")
-
-[//]: # (    })

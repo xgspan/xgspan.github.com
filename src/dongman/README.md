@@ -1,6 +1,6 @@
 ---
 index: false
-icon: /assets/banner/动漫.jpg
+icon: https://s21.ax1x.com/2025/05/23/pEz1WE8.jpg
 category:
   - 二次元
 ---
@@ -13,10 +13,7 @@ const keys = Object.keys(data)
 # 二次元
 
 
-::: info 注意
-网盘资源一定要记得先 **保存**
+<!-- @include: @common/网盘提示.md -->
 
-可获取最新更新，防止资源丢失
-:::
 
 <MyTabs v-for="key in keys" :key="key" v-bind="data[key]"  />
