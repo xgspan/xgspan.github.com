@@ -6,13 +6,7 @@
       {
         "tab": "全部",
         "data": [
-          {
-            "tag": "i,a,p",
-            "title": "游戏搜索",
-            "desc": "需要什么直接搜",
-            "logo": "/assets/tubiao/游戏/搜索.svg",
-            "link": "https://web.wps.cn/wo/sl/v33W3pH4?app_id=4fuv106ERmpl3tkUpdHksM"
-          },
+
           {
           "tag": "i,a,p",
           "title": "游戏全集",
@@ -23,9 +17,16 @@
           {
             "tag": "i,a,p",
             "title": "问题汇总",
-            "desc": "无法安装、卡顿看这里面",
+            "desc": "安装、卡顿、加速器",
             "logo": "/assets/tubiao/游戏/游戏.svg",
             "link": "https://pan.quark.cn/s/93b14ab7c3a9"
+          },
+          {
+            "tag": "i,a,p",
+            "title": "游戏搜索",
+            "desc": "没有资源qq反馈",
+            "logo": "/assets/tubiao/游戏/搜索.svg",
+            "link": "https://web.wps.cn/wo/sl/v33W3pH4?app_id=4fuv106ERmpl3tkUpdHksM"
           }
         ]
       }

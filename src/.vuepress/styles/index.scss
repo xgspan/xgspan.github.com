@@ -75,13 +75,6 @@ iframe.youtube-video {
 
 // For Special Event
 
-.vp-navbar {
-  background: linear-gradient(to right, #a8edea, #fed6e3);
-}
-
-[data-theme="dark"] .vp-navbar {
-  background: linear-gradient(to right, #2b5876, #4e4376);
-}
 
 .vp-navbar::before {
   content: "🏝";
@@ -115,7 +108,7 @@ iframe.youtube-video {
           #f8f4ff 25%,
           #f0f5ff 50%,
           #f4f9ff 75%,
-          #fafafa 100%);
+          #fafafa 100%) !important;
 }
 .background-gradient-jiguang { // 北欧极光渐变
   background: linear-gradient(120deg,
@@ -126,8 +119,16 @@ iframe.youtube-video {
 }
 
 
-.banner-dongman{
+.jianbian{
   background: linear-gradient(to right, rgba(168, 237, 234, 0.5), rgba(254, 214, 227, 0.5));
+}
+
+.banner-dongman{
+    background-color: #ffe6f2;
+    background-image:
+            radial-gradient(pink 2px, transparent 2px),
+            radial-gradient(pink 2px, transparent 2px);
+  background-size: 30px 30px;
 }
 
 .banner-youxi {
@@ -136,4 +137,14 @@ iframe.youtube-video {
           linear-gradient(rgba(100, 149, 237, 0.3) 1px, transparent 1px),
           linear-gradient(90deg, rgba(100, 149, 237, 0.3) 1px, transparent 1px);
   background-size: 30px 30px;
+}
+
+#main-content,.vp-footer-wrapper,.vp-navbar{
+@extend .jianbian;
+}
+.vp-footer-wrapper{
+  margin-top: 0 !important;
+}
+.details {
+  background-color: transparent !important;
 }

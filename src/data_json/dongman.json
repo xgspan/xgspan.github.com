@@ -1,31 +1,24 @@
 {
   "sousuo": {
     "icon": "/assets/tubiao/推荐.svg",
-    "title": "推荐~",
+    "title": "🔥无敌APP",
     "tabsData": [
       {
-        "tab": "懒人合集",
+        "tab": "激活看全网",
         "data": [
           {
             "tag": "i,a",
-            "title": "悟空",
+            "title": "全网动漫免费",
             "desc": "激活后~搜你想搜,看你想看,界面清爽干净 ",
-            "logo": "/assets/card-logo/悟空.jpg",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_54307181_1739761704/256",
             "link": "/dongman/wukong"
           },
           {
             "tag": "i,a",
-            "title": "夸克 🔞 ",
+            "title": "全网🔞动漫",
             "desc": "激活后,懂得都懂 0_0",
-            "logo": "/assets/card-logo/夸克.png",
+            "logo": "https://pp.myapp.com/ma_icon/0/icon_54452422_1742380353/256",
             "link": "/dongman/kuake"
-          },
-          {
-            "tag": "i,a,p",
-            "title": "动漫软件合集",
-            "desc": "苹果,安卓,平板,电脑所有合集",
-            "logo": "/assets/tubiao/合集.svg",
-            "link": "https://pan.quark.cn/s/f9a6f1a0aeec"
           }
         ]
       }
@@ -33,92 +26,24 @@
   },
   "动漫": {
     "icon": "/assets/tubiao/二次元/APP.svg",
-    "title": "APP",
+    "title": "网盘",
     "tabsData": [
       {
-        "tab": "动漫",
+        "tab": "动漫/漫画",
         "data": [
+          {
+            "tag": "i,a,p",
+            "title": "动漫软件合集",
+            "desc": "苹果,安卓,平板,电脑所有合集",
+            "logo": "/assets/tubiao/合集.svg",
+            "link": "https://pan.quark.cn/s/f9a6f1a0aeec"
+          },
           {
             "tag": "i,a,p",
             "title": "追番看漫合集",
             "desc": "【动漫】【漫画】合集",
             "logo": "https://pp.myapp.com/ma_icon/0/icon_54314048_1688112516/256",
             "link": "https://pan.quark.cn/s/e1ba48af1564"
-          },
-          {
-            "tag": "a",
-            "title": "OmoFun复活版",
-            "desc": "海量正版番剧，弹幕互动超欢乐，二次元大本营！",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54304278_1739258612/256",
-            "link": "https://pan.quark.cn/s/c6209cf1ac10"
-          },
-          {
-            "tag": "i,a",
-            "title": "AGE 动漫 安卓苹果",
-            "desc": "小众神作聚集地，无广告追番，纯粹动漫体验。",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54329602_1736139880/256",
-            "link": "https://pan.quark.cn/s/6c5f5824dabd"
-          },
-          {
-            "tag": "i,a",
-            "title": "囧次元-原樱花动漫 去广告版",
-            "desc": "国漫最强库，热门IP全收录，更新快画质顶！",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54307181_1739761704/256",
-            "link": "https://pan.quark.cn/s/d8fcb47122c0"
-          },
-          {
-            "tag": "i,a,p",
-            "title": "Kazumi（全版本）",
-            "desc": "日漫国漫双修，会员超值，独播番剧看到爽。",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54452422_1742380353/256",
-            "link": "https://pan.quark.cn/s/ead1edd8ccd1"
-          },
-          {
-            "tag": "a",
-            "title": "MI动漫",
-            "desc": "同步日本新番，生肉熟肉都有，硬核漫迷必备！",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54420489_1734427003/256",
-            "link": "https://pan.quark.cn/s/489db36afe7a"
-          },
-          {
-            "tag": "i,a",
-            "title": "MiFun【安卓+iOS】-官方版",
-            "desc": "轻松刷番，分区清晰，碎片时间快乐补番~",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54472709_1739521837/256",
-            "link": "https://pan.quark.cn/s/cfb52b018394"
-          }
-        ]
-      },
-      {
-        "tab": "漫画",
-        "data": [
-          {
-            "tag": "i,a,p",
-            "title": "追番看漫合集",
-            "desc": "【动漫】【漫画】合集",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54314048_1688112516/256",
-            "link": "https://pan.quark.cn/s/e1ba48af1564"
-          },
-          {
-            "tag": "a",
-            "title": "易次元",
-            "desc": "弹幕狂欢不停歇，海量番剧随时刷，二次元必备！",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_52777326_1747110743/256",
-            "link": "https://pan.quark.cn/s/37054f896770"
-          },
-          {
-            "tag": "a",
-            "title": "酷漫熊",
-            "desc": "新番速递不延迟，经典老番全打包，一次补到爽~",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54370205_1745344902/256",
-            "link": "https://pan.quark.cn/s/d2187014dfcf"
-          },
-          {
-            "tag": "a",
-            "title": "拷贝漫画",
-            "desc": "离线缓存超方便，没网照样看，地铁追番神器！",
-            "logo": "https://pp.myapp.com/ma_icon/0/icon_54324356_1743386578/256",
-            "link": "https://pan.quark.cn/s/43ae702326dc"
           }
         ]
       }

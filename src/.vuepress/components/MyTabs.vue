@@ -20,9 +20,9 @@
         </template>
 
         <TabPane v-for="item in props.tabsData" :key="item.tab" :tab="item.tab">
-          <div :class="isClose&&'tab-pane-close'" class="h100 background-gradient-zhenzhu">
+          <div :class="isClose&&'tab-pane-close'" class="h100">
             <div class="app-card-wrap">
-              <AppCard v-for="appdata in item.data" :key="appdata.title" class="app-card-item" v-bind="appdata"/>
+              <AppCard v-for="appdata in item.data" :key="appdata.title" class="app-card-item background-gradient-zhenzhu" v-bind="appdata"/>
             </div>
 
           </div>

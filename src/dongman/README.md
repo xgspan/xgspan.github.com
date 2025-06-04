@@ -12,8 +12,4 @@ const keys = Object.keys(data)
 
 # 二次元
 
-
-<!-- @include: @common/网盘提示.md -->
-
-
 <MyTabs v-for="key in keys" :key="key" v-bind="data[key]"  />

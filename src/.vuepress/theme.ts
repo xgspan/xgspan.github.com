@@ -8,12 +8,11 @@ const __dirname = getDirname(import.meta.url);
 
 export default hopeTheme({
   hostname: "https://xgs.icu/",
-
+  darkmode: "disable",
   author: {
     name: "小怪兽",
     url: "https://www.xn--n6q90xdjd.vip/",
   },
-
   logo: "/logo.png",
 
   docsDir: "src",
