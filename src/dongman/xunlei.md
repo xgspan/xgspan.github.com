@@ -21,9 +21,9 @@ import { AndroidOutlined,AppleOutlined } from '@ant-design/icons-vue';
 
 ## 📱 第一步：下载软件
 
-应用商店搜索【**悟空浏览器**】
+应用商店搜索【**迅雷浏览器**】
 
-![悟空浏览器 =50x50](/assets/card-logo/悟空.jpg)
+![迅雷浏览器 =200](/assets/card-logo/迅雷浏览器.png)
 
 ## 🔑 第二步：输入激活
 
@@ -32,7 +32,7 @@ import { AndroidOutlined,AppleOutlined } from '@ant-design/icons-vue';
 最新中文激活码（{{day()}}有效）：
 
 ```:no-line-numbers
-水晶乐园
+初心动漫
 ```
 
 ## 🎬 第三步：开始观影
