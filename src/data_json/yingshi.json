@@ -1,0 +1,38 @@
+{
+  "影视搜索": {
+    "icon": "/assets/tubiao/热门.svg",
+    "title": "全网影视（无广）",
+    "tabsData": [
+      {
+        "tab": "教程",
+        "data": [
+          {
+            "tag": "i,a",
+            "title": "【教程】全网影视",
+            "desc": "懂得都懂 0_0",
+            "logo": "/assets/tubiao/yingshi.svg",
+            "link": "https://go.plvideo.cn/front/video/view?vid=vb3e5325f6096c48afdc6c0b3cdf802c_v"
+          }
+        ]
+      }
+    ]
+  },
+  "影视热门": {
+    "icon": "/assets/tubiao/网盘.svg",
+    "title": "网盘4k（无删减）",
+    "tabsData": [
+      {
+        "tab": "网盘",
+        "data": [
+          {
+            "tag": "i,a,p",
+            "title": "热播剧～🔥",
+            "desc": "热门影视（4k、无删减）",
+            "logo": "/assets/tubiao/合集.svg",
+            "link": "https://pan.quark.cn/s/6356604af7a6"
+          }
+        ]
+      }
+    ]
+  }
+}

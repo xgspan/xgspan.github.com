@@ -1,13 +1,13 @@
 ---
 index: false
-icon: /assets/banner/游戏.jpg
+icon: /assets/banner/影视.jpg
 category:
-  - 游戏
+  - 影视
 ---
 
-# 游戏
+# 影视
 <script setup>
-import data from '@data/youxi.json';
+import data from '@data/yingshi.json';
 const keys = Object.keys(data)
 </script>
 

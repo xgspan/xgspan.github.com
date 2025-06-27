@@ -1,32 +1,24 @@
 {
-  "lAC": {
-    "icon": "/assets/tubiao/宝藏.svg",
-    "title": "宝藏~",
+  "游戏网盘": {
+    "icon": "/assets/tubiao/网盘.svg",
+    "title": "网盘",
     "tabsData": [
       {
-        "tab": "全部",
+        "tab": "合集",
         "data": [
-
           {
-          "tag": "i,a,p",
-          "title": "游戏全集",
-          "desc": "所有游戏合集",
-          "logo": "/assets/tubiao/合集.svg",
-          "link": "https://pan.quark.cn/s/64f1dfa47259"
+            "tag": "i,a,p",
+            "title": "游戏全集",
+            "desc": "所有游戏合集",
+            "logo": "/assets/tubiao/合集.svg",
+            "link": "https://pan.quark.cn/s/64f1dfa47259"
           },
           {
             "tag": "i,a,p",
             "title": "问题汇总",
             "desc": "安装、卡顿、加速器",
-            "logo": "/assets/tubiao/游戏/游戏.svg",
+            "logo": "/assets/tubiao/游戏.svg",
             "link": "https://pan.quark.cn/s/93b14ab7c3a9"
-          },
-          {
-            "tag": "i,a,p",
-            "title": "游戏搜索",
-            "desc": "没有资源qq反馈",
-            "logo": "/assets/tubiao/游戏/搜索.svg",
-            "link": "https://web.wps.cn/wo/sl/v33W3pH4?app_id=4fuv106ERmpl3tkUpdHksM"
           }
         ]
       }

@@ -123,6 +123,10 @@ iframe.youtube-video {
   background: linear-gradient(to right, rgba(168, 237, 234, 0.5), rgba(254, 214, 227, 0.5));
 }
 
+.banner {
+  margin: 16px auto;
+}
+
 .banner-dongman{
     background-color: #ffe6f2;
     background-image:
@@ -138,7 +142,37 @@ iframe.youtube-video {
           linear-gradient(90deg, rgba(100, 149, 237, 0.3) 1px, transparent 1px);
   background-size: 30px 30px;
 }
+.banner-yingshi {
+  background:
+          /* 浅米色幕布底色 */
+          linear-gradient(135deg, #fff9f0 0%, #f5edff 100%),
+            /* 幕布褶皱纹理 */
+          repeating-linear-gradient(
+                          to right,
+                          rgba(0,0,0,0.02),
+                          rgba(0,0,0,0.02) 1px,
+                          transparent 1px,
+                          transparent 15px
+          ),
+            /* 投影仪光线 */
+          conic-gradient(
+                          from -10deg at 20% 50%,
+                          rgba(255,220,200,0.3),
+                          rgba(200,180,255,0.2),
+                          transparent 30deg
+          );
 
+  background-blend-mode: multiply;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.banner-chigua {
+  background-color: #e0ffff;
+  background-image:
+          repeating-linear-gradient(45deg, rgba(0, 255, 255, 0.2) 0, rgba(0, 255, 255, 0.2) 10px, transparent 10px, transparent 20px),
+          repeating-linear-gradient(-45deg, rgba(0, 255, 255, 0.2) 0, rgba(0, 255, 255, 0.2) 10px, transparent 10px, transparent 20px);
+  background-size: 30px 30px;
+}
 #main-content,.vp-footer-wrapper,.vp-navbar{
 @extend .jianbian;
 }

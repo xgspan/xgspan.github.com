@@ -1,16 +1,29 @@
 {
   "banner": [
     {
-      "title": "二次元",
-      "content": "动漫、漫画 全网免费看...",
-      "logo": "https://s21.ax1x.com/2025/05/23/pEz1WE8.jpg",
+      "title": "【 动漫 】",
+      "content": "动漫、漫画 ~ 宝藏app",
+      "logo": "/assets/banner/动漫.jpg",
       "name": "dongman"
     },
     {
-      "title": "游戏专区",
-      "content": "各种游戏宝藏...",
-      "logo": "https://s21.ax1x.com/2025/05/23/pEz1h4g.png",
+      "title": "【 热剧 】",
+      "content": "热门影视~ 4k、完整、未删减",
+      "logo": "/assets/banner/影视.jpg",
+      "name": "yingshi"
+    },
+    {
+      "title": "【 游戏 】",
+      "content": "全网游戏宝藏...",
+      "logo": "/assets/banner/游戏.jpg",
       "name": "youxi"
+    },
+    {
+      "title": "【 吃🍉 】",
+      "content": "合理合法，仅供交流~",
+      "logo": "/assets/banner/吃瓜.jpg",
+      "name": "chigua",
+      "link": "https://热瓜.top"
     }
   ]
 }

@@ -4,6 +4,7 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 import { getDirname, path } from "vuepress/utils";
+import {Button} from "ant-design-vue";
 const __dirname = getDirname(import.meta.url);
 
 export default hopeTheme({
@@ -11,7 +12,7 @@ export default hopeTheme({
   darkmode: "disable",
   author: {
     name: "小怪兽",
-    url: "https://www.xn--n6q90xdjd.vip/",
+    url: "https://xgs.icu/",
   },
   logo: "/logo.png",
 
@@ -28,7 +29,7 @@ export default hopeTheme({
   displayFooter: true,
   print: false,
   pageInfo: ["Author", "Original", "Category", "Tag"],
-  footer: "欢迎点右上角↗️QQ图标，加入我们😍~",
+  footer: "<a href='https://beian.miit.gov.cn' target='_blank' style='font-size: 12px'>蜀ICP备2025147360号-1</a> ",
   copyright: false,
 
   // 加密配置

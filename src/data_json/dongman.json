@@ -1,24 +1,24 @@
 {
-  "sousuo": {
-    "icon": "/assets/tubiao/推荐.svg",
-    "title": "🔥无敌APP",
+  "动漫搜索": {
+    "icon": "/assets/tubiao/热门.svg",
+    "title": "全网动漫（无广）",
     "tabsData": [
       {
-        "tab": "激活看全网",
+        "tab": "教程",
         "data": [
           {
             "tag": "i,a",
-            "title": "全网🔞动漫",
-            "desc": "激活后,懂得都懂 0_0",
+            "title": "【教程】🔞动漫",
+            "desc": "懂得都懂 0_0",
             "logo": "https://pp.myapp.com/ma_icon/0/icon_54452422_1742380353/256",
-            "link": "/dongman/kuake"
+            "link": "https://go.plvideo.cn/front/video/view?vid=vb3e5325f6096c48afdc6c0b3cdf802c_v"
           }
         ]
       }
     ]
   },
-  "动漫": {
-    "icon": "/assets/tubiao/二次元/APP.svg",
+  "动漫网盘": {
+    "icon": "/assets/tubiao/网盘.svg",
     "title": "网盘",
     "tabsData": [
       {

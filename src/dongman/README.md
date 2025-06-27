@@ -1,8 +1,8 @@
 ---
 index: false
-icon: https://s21.ax1x.com/2025/05/23/pEz1WE8.jpg
+icon: /assets/banner/动漫.jpg
 category:
-  - 二次元
+  - 动漫
 ---
 
 <script setup>
@@ -10,6 +10,6 @@ import data from '@data/dongman.json';
 const keys = Object.keys(data)
 </script>
 
-# 二次元
+# 动漫
 
 <MyTabs v-for="key in keys" :key="key" v-bind="data[key]"  />
