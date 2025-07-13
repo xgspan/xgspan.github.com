@@ -37,7 +37,6 @@ import data from '@data/home.json'
     :key="val.name"
     :class="`banner banner-${val.name}`"
     v-bind="val"
-    :actions='val.name && [{ text: "进入专区", link: val.link || `/${ val.name}/` }]' />
+    :actions='val.name && [{ text: "获取资源", link: val.link || `/${ val.name}/` }]' />
 
 
-<!-- @include: ./common/xuzhi.md -->

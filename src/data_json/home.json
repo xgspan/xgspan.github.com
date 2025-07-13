@@ -1,32 +1,18 @@
 {
   "banner": [
     {
-      "title": "【 动漫 】",
-      "content": "动漫、漫画 ~ 宝藏app",
-      "logo": "/assets/banner/动漫.jpg",
-      "name": "dongman",
-      "link": "https://pan.quark.cn/s/38cf149b0248"
+      "title": "【 资源合集 】",
+      "content": "动漫/漫画/游戏/影视/工具...",
+      "logo": "/assets/banner/宝藏.jpg",
+      "name": "baozang",
+      "link": "https://pan.quark.cn/s/50980f408aae"
     },
     {
-      "title": "【 热剧 】",
+      "title": "【 在线观看 】",
       "content": "热门影视~ 4k、完整、未删减",
       "logo": "/assets/banner/影视.jpg",
       "name": "yingshi",
-      "link": "https://pan.quark.cn/s/26736f0ccb4b"
-    },
-    {
-      "title": "【 游戏 】",
-      "content": "全网游戏宝藏...",
-      "logo": "/assets/banner/游戏.jpg",
-      "name": "youxi",
-      "link": "https://pan.quark.cn/s/343ce0597e20"
-    },
-    {
-      "title": "【 宝藏app 】",
-      "content": "安卓/苹果,追剧/动漫/工具...",
-      "logo": "/assets/banner/宝藏.jpg",
-      "name": "baozang",
-      "link": "https://pan.quark.cn/s/dd074ffa0120"
+      "link": "https://番剧.top"
     }
   ]
 }
