@@ -1,18 +1,25 @@
 {
   "banner": [
     {
-      "title": "【 资源合集 】",
+      "title": "【资源合集】",
       "content": "动漫/漫画/游戏/影视/工具...",
       "logo": "/assets/banner/宝藏.jpg",
       "name": "baozang",
       "link": "https://pan.quark.cn/s/50980f408aae"
     },
     {
-      "title": "【 在线观看 】",
+      "title": "【在线观看】",
       "content": "热门影视~ 4k、完整、未删减",
       "logo": "/assets/banner/影视.jpg",
       "name": "yingshi",
       "link": "https://番剧.top"
+    },
+    {
+      "title": "【吃瓜合集】",
+      "content": "热门 🍉",
+      "logo": "/assets/banner/吃瓜.jpg",
+      "name": "吃瓜",
+      "link": "https://热瓜.top"
     }
   ]
 }
